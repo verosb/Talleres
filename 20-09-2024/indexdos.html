@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid FC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        header, .noticias, .eventos, .enlaces, .contacto, .redes {
+            grid-column: span 4;
+            background-color: #f3f3f3;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        header img {
+            width: 80px;
+            height: auto;
+        }
+        .noticias, .eventos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .noticia, .evento {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .enlaces {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .enlace {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .contacto, .redes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .redes a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="../img/logo.png" alt="Banner">
+            <p class="align-items">REAL MADRID FC</p>
+        </header>
+
+        <section class="noticias">
+            <div class="noticia" id="noticia1">
+                <h2 class="titulo">PLANTILLA</h2>
+                <p class="resumen">Algunos jugadores de esta plantilla ya han terminado su contrato y se fueron a otros equipos.</p>
+                <img src="../img/real1.jpeg" alt="Imagen 1">
+            </div>
+            <div class="noticia" id="noticia2">
+                <h2 class="titulo">PUBLICIDAD</h2>
+                <p class="resumen">Compra la nueva camiseta del FC.</p>
+                <img src="../img/real2.jpeg" alt="Imagen 2">
+            </div>
+            <div class="noticia" id="noticia3">
+                <h2 class="titulo">EL REY DE EUROPA</h2>
+                <p class="resumen">Sigue siendo el máximo ganador de la Champions League.</p>
+                <img src="../img/real3.jpeg" alt="Imagen 3">
+            </div>
+        </section>
+        <section class="eventos">
+            <div class="evento" id="evento1">
+                <img src="../img/real5.png" alt="Evento 1">
+                <p>Presentación de la serie de Courtois.</p>
+            </div>
+            <div class="evento" id="evento2">
+                <img src="../img/real4.png" alt="Evento 2">
+                <p>Último entrenamiento antes de enfrentar al Espanyol.</p>
+            </div>
+            <div class="evento" id="evento3">
+                <img src="../img/real6.png" alt="Evento 3">
+                <p>El Santiago Bernabeu, elegido como el mejor estadio del mundo.</p>
+            </div>
+        </section>
+        <section class="enlaces">
+            <div class="enlace" id="enlace1">Enlace 1</div>
+            <div class="enlace" id="enlace2">Enlace 2</div>
+            <div class="enlace" id="enlace3">Enlace 3</div>
+            <div class="enlace" id="enlace4">Enlace 4</div>
+            <div class="enlace" id="enlace5">Enlace 5</div>
+        </section>
+        <section class="contacto">
+            <div>
+                <h3>Contactos</h3>
+                <p>Tel: 37456746</p>
+                <p>Correo: realmadrid@correo.com</p>
+            </div>
+        </section>
+        <section class="redes">
+            <h3>Redes Sociales</h3>
+            <div>
+                <a href="../img/facebook.png" id="facebook">Facebook</a>
+                <a href="../img/instagram.jpeg" id="instagram">Instagram</a>
+                <a href="../img/link.png" id="linkedin">LinkedIn</a>
+                <a href="../img/YouTube-logo.png" id="youtube">YouTube</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
