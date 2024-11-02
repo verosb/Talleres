@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes Web </title>
+</head>
+<body>
+ 
+    <!-- Sección de Ayuda Etiqueta -->
+    <section id="ayuda-etiqueta">
+        <h2>Ayuda Etiqueta</h2>
+        <ayuda-etiqueta texto="Información importante"></ayuda-etiqueta>
+        <ayuda-etiqueta texto="Contacto soporte"></ayuda-etiqueta>
+        <ayuda-etiqueta texto="Términos de uso"></ayuda-etiqueta>
+    </section>
+
+    <!-- Sección de Botón de Notificaciones -->
+    <section id="boton-notificaciones" style="margin-top: 20px;">
+        <h2>Botón de Notificaciones</h2>
+        <boton-notificaciones></boton-notificaciones>
+    </section>
+
+    <!-- Sección de Caja de Texto para Clave -->
+    <section id="caja-texto-clave" style="margin-top: 20px;">
+        <h2>Ingrese su Clave</h2>
+        <caja-texto-clave></caja-texto-clave>
+    </section>
+
+    <!-- Sección de Caja de Texto para Cupón de Descuento -->
+    <section id="caja-texto-cupon" style="margin-top: 20px;">
+        <h2>Ingrese Cupón de Descuento</h2>
+        <caja-texto-cupon></caja-texto-cupon>
+    </section>
+
+    <script>
+        // Componente Ayuda Etiqueta
+        class AyudaEtiqueta extends HTMLElement {
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                this.innerText = this.getAttribute("texto") || "Ayuda";
+                this.style.color = "#ffffff";
+                this.style.backgroundColor = "#007bff";
+                this.style.padding = "4px 8px";
+                this.style.borderRadius = "4px";
+                this.style.fontSize = "0.9rem";
+                this.style.fontWeight = "bold";
+                this.style.display = "inline-block";
+                this.style.marginRight = "8px";
+            }
+        }
+        window.customElements.define("ayuda-etiqueta", AyudaEtiqueta);
+
+        // Componente Botón de Notificaciones
+        class BotonNotificaciones extends HTMLElement {
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                this.innerHTML = `<span style="margin-right: 20% 8px;">🔔</span> Notificaciones`;
+                this.style.display = "flex";
+                this.style.alignItems = "left";
+                this.style.backgroundColor = "#28a745";
+                this.style.color = "#ffffff";
+                this.style.padding = "8px";
+                this.style.border = "none";
+                this.style.borderRadius = "5px";
+                this.style.cursor = "pointer";
+                this.style.fontSize = "1rem";
+            }
+        }
+        window.customElements.define("boton-notificaciones", BotonNotificaciones);
+
+        // Componente Caja de Texto para Clave
+        class CajaTextoClave extends HTMLElement {
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                this.innerHTML = `
+                    <input type="password" placeholder="Ingrese su clave" id="clave" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem;">
+                    <button id="enviarClave" style="margin-left: 8px; padding: 8px; border-radius: 5px; background-color: #007bff; color: #fff;">Enviar</button>
+                `;
+
+                this.querySelector("#enviarClave").addEventListener("click", () => {
+                    const clave = this.querySelector("#clave").value;
+                    const encryptedPassword = btoa(clave); // Encriptación básica 
+                    console.log("Clave encriptada enviada:", encryptedPassword);
+                    alert("Clave encriptada enviada: " + encryptedPassword);
+                });
+            }
+        }
+        window.customElements.define("caja-texto-clave", CajaTextoClave);
+
+        // Componente Caja de Texto para Cupón de Descuento
+        class CajaTextoCupon extends HTMLElement {
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                this.innerHTML = `<input type="text" placeholder="Cupón de descuento" style="padding: 8px; border-radius: 5px; border: 1px solid #007bff; font-size: 1rem;">`;
+            }
+        }
+        window.customElements.define("caja-texto-cupon", CajaTextoCupon);
+    </script>
+</body>
+</html>
